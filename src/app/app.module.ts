@@ -9,6 +9,7 @@ import { StoreModule } from '@ngrx/store';
 import { counterReducer } from './shared/store/counter.reducer';
 import { MaterialModule } from './material.module';
 import { CustomCounterComponent } from './component/custom-counter/custom-counter.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { CustomCounterComponent } from './component/custom-counter/custom-counte
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
-    StoreModule.forRoot({counter: counterReducer})
+    StoreModule.forRoot({counter: counterReducer}),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

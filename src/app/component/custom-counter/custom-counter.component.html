@@ -1,1 +1,17 @@
-<p>custom-counter works!</p>
+<mat-card>
+	<mat-card-content>
+		<mat-form-field>
+			<mat-label>Counter input</mat-label>
+			<input matInput [(ngModel)]="counterInput" />
+		</mat-form-field>   
+            <mat-form-field>
+                <mat-label>Type:</mat-label>
+                <mat-select [(ngModel)]="type">
+                    <mat-option value="add">add</mat-option>
+                    <mat-option value="remove">remove</mat-option>
+                </mat-select>
+            </mat-form-field>
+		<br>
+		<button mat-raised-button color="primary" (click)="Increment()">Submit</button>
+	</mat-card-content>
+</mat-card>
