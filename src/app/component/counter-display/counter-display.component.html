@@ -1,1 +1,2 @@
-<h1>Counter is: <b>{{counterValue}}</b></h1>
+<h1>{{(counter$ | async)?.name}}</h1>
+<h1>Counter is: <b>{{(counter$ | async)?.counter}}</b></h1>

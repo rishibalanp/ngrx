@@ -1,5 +1,6 @@
+import { counterModel } from "./counter.model";
 
-
-export const initialState={
-    counter:0
-}
+export const initialState: counterModel = {
+  counter: 1,
+  name: 'RISHI'
+};
