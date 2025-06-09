@@ -12,21 +12,21 @@ import { Observable, Subscription } from 'rxjs';
 export class CounterDisplayComponent implements OnInit,OnDestroy{
   counterValue!: number;
   name: string = '';
-//   subscription!: Subscription;
+  subscription!: Subscription;
   counter$!: Observable<counterModel>; 
   constructor(private store: Store<{ counter: counterModel }>) {}
 
   ngOnInit(): void {
-    // this.subscription =  this.store.select('counter').subscribe((data) => {
-    //   this.counterValue = data.counter;
-    //   this.name = data.name;
-    // });
-	this.counter$ = this.store.select('counter');
+    this.subscription =  this.store.select('counter').subscribe((data) => {
+      this.counterValue = data.counter;
+      this.name = data.name;
+    });
+	// this.counter$ = this.store.select('counter');
   }
 
   ngOnDestroy(): void {
-	// if(this.subscription){
-	// 	this.subscription.unsubscribe();
-	// }
+	if(this.subscription){
+		this.subscription.unsubscribe();
+	}
   }
 }
